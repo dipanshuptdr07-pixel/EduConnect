@@ -11,6 +11,280 @@
   --shadow:0 10px 30px rgba(30,60,120,.08);
   --radius:18px;
 }
+/* EDUCONNECT PREMIUM MOBILE UI */
+
+.mobile-app{
+  min-height:100vh;
+  background:#f4f8fc;
+  color:#172033;
+  padding-bottom:78px;
+}
+
+.mobile-head{
+  height:68px;
+  padding:10px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#fff;
+  background:linear-gradient(135deg,#0875d1,#1554c8);
+  border:0;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.brand-mini{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.brand-mini b{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.18);
+  border-radius:11px;
+  font-size:18px;
+}
+
+.brand-mini strong{
+  font-size:19px;
+}
+
+.head-icons{
+  font-size:17px;
+  white-space:nowrap;
+}
+
+.mobile-content{
+  width:100%;
+  max-width:520px;
+  margin:auto;
+  padding:18px 16px 25px;
+}
+
+.welcome{
+  padding:4px 3px 15px;
+}
+
+.welcome p{
+  font-size:19px;
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.welcome small{
+  color:#718096;
+  font-size:12px;
+}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.stat-card{
+  padding:15px;
+  border-radius:17px;
+  background:#fff;
+  border:1px solid #e7edf5;
+  box-shadow:0 7px 20px rgba(30,70,120,.07);
+}
+
+.stat-card small{
+  display:block;
+  color:#697789;
+  font-size:11px;
+  margin-bottom:7px;
+}
+
+.stat-card b{
+  display:block;
+  font-size:22px;
+  letter-spacing:-.5px;
+}
+
+.stat-card span{
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  color:#7c8998;
+}
+
+.stat-card.green b{color:#11966b}
+.stat-card.purple b{color:#7048d8}
+.stat-card.orange b{color:#e47b19}
+.stat-card.red b{color:#df4d57}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:22px 2px 10px;
+}
+
+.section-title b{
+  font-size:15px;
+}
+
+.section-title span{
+  color:#1671d8;
+  font-size:11px;
+  font-weight:700;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+}
+
+.quick-grid button{
+  min-height:76px;
+  padding:10px 4px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border-radius:15px;
+  color:#344154;
+  background:#fff;
+  border:1px solid #e8edf4;
+  box-shadow:0 5px 15px rgba(30,70,120,.05);
+}
+
+.quick-grid button:first-letter{
+  font-size:19px;
+}
+
+.quick-grid button span{
+  font-size:10px;
+  font-weight:700;
+}
+
+.quick-grid button:active{
+  transform:scale(.96);
+}
+
+.notice-card,
+.event-card{
+  background:#fff;
+  border:1px solid #e5ebf3;
+  border-radius:17px;
+  padding:5px 15px;
+  box-shadow:0 7px 20px rgba(30,70,120,.06);
+}
+
+.notice-card div{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:13px 0;
+  border-bottom:1px solid #edf0f4;
+  font-size:11px;
+}
+
+.notice-card div:last-child{
+  border-bottom:0;
+}
+
+.notice-card span{
+  color:#435064;
+}
+
+.event-card{
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.event-card b{
+  font-size:14px;
+}
+
+.event-card small{
+  color:#7b8796;
+  font-size:11px;
+}
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:68px;
+  padding:7px 8px;
+  display:flex;
+  justify-content:space-around;
+  background:rgba(255,255,255,.97);
+  border-top:1px solid #e5eaf1;
+  box-shadow:0 -8px 25px rgba(30,60,100,.08);
+  backdrop-filter:blur(15px);
+  z-index:50;
+}
+
+.bottom-nav button{
+  flex:1;
+  max-width:85px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  color:#7b8796;
+  background:transparent;
+  font-size:18px;
+}
+
+.bottom-nav button span{
+  font-size:9px;
+  font-weight:700;
+}
+
+.bottom-nav button:active{
+  color:#176bd0;
+}
+
+.inner-page{
+  padding-top:22px;
+}
+
+.inner-page h1{
+  margin:15px 0 7px;
+  font-size:25px;
+}
+
+.inner-page p{
+  color:#718096;
+  line-height:1.6;
+}
+
+.back{
+  padding:8px 13px;
+  border-radius:10px;
+  color:#176bd0;
+  background:#eaf3ff;
+  font-weight:700;
+}
+
+@media(min-width:700px){
+  .mobile-app{
+    max-width:520px;
+    min-height:100vh;
+    margin:auto;
+    box-shadow:0 0 50px rgba(30,60,100,.1);
+  }
+
+  .mobile-head{
+    border-radius:0;
+  }
+}
 
 body{
   font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
