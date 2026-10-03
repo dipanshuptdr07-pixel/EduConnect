@@ -661,3 +661,265 @@ input::placeholder{
   background:#eef5ff;
   font-size:13px;
                    }
+/* ATTENDANCE PREMIUM SCREEN */
+
+.page-heading{
+  margin:18px 2px 18px;
+}
+
+.page-heading small{
+  color:#1671d8;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.page-heading h1{
+  margin:5px 0;
+  font-size:28px;
+}
+
+.page-heading p{
+  margin:0;
+  color:#718096;
+  font-size:12px;
+}
+
+.attendance-main{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:20px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#0875d1,#174ec4);
+  color:#fff;
+  box-shadow:0 12px 28px rgba(25,91,190,.2);
+}
+
+.attendance-ring{
+  width:105px;
+  height:105px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:conic-gradient(#fff 0 92%,rgba(255,255,255,.2) 92% 100%);
+  position:relative;
+}
+
+.attendance-ring:after{
+  content:"";
+  position:absolute;
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  background:#1265ce;
+}
+
+.attendance-ring div{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.attendance-ring b{
+  display:block;
+  font-size:20px;
+}
+
+.attendance-ring span{
+  font-size:9px;
+  opacity:.8;
+}
+
+.attendance-info b{
+  font-size:15px;
+}
+
+.attendance-info p{
+  margin-top:6px;
+  font-size:11px;
+  line-height:1.5;
+  opacity:.82;
+}
+
+.attendance-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:12px;
+}
+
+.attendance-stats>div{
+  padding:14px 8px;
+  text-align:center;
+  background:#fff;
+  border:1px solid #e6ecf4;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(30,70,120,.05);
+}
+
+.attendance-stats b{
+  display:block;
+  font-size:20px;
+  margin:5px 0 2px;
+}
+
+.attendance-stats small{
+  color:#7b8796;
+  font-size:10px;
+}
+
+.dot{
+  display:block;
+  width:8px;
+  height:8px;
+  margin:auto;
+  border-radius:50%;
+}
+
+.dot.present,.calendar-legend .present{
+  background:#18a879;
+}
+
+.dot.absent,.calendar-legend .absent{
+  background:#e0525c;
+}
+
+.dot.leave,.calendar-legend .leave{
+  background:#ed9a2b;
+}
+
+.calendar-card,
+.subject-attendance{
+  background:#fff;
+  border:1px solid #e5ebf3;
+  border-radius:18px;
+  padding:15px;
+  box-shadow:0 7px 20px rgba(30,70,120,.06);
+}
+
+.calendar-head,
+.calendar-days{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  text-align:center;
+}
+
+.calendar-head{
+  color:#8995a5;
+  font-size:9px;
+  margin-bottom:10px;
+}
+
+.calendar-days{
+  gap:6px;
+}
+
+.calendar-days span{
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  font-size:10px;
+  color:#455366;
+}
+
+.calendar-days .muted{
+  color:#c3cad3;
+}
+
+.calendar-days .weekend{
+  color:#a9b1bd;
+}
+
+.calendar-days .present-day{
+  background:#e8f8f2;
+  color:#118762;
+  font-weight:700;
+}
+
+.calendar-days .absent-day{
+  background:#ffeded;
+  color:#d44852;
+  font-weight:700;
+}
+
+.calendar-days .leave-day{
+  background:#fff3df;
+  color:#d68418;
+  font-weight:700;
+}
+
+.calendar-legend{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:15px;
+  padding-top:12px;
+  border-top:1px solid #edf0f4;
+  font-size:9px;
+  color:#718096;
+}
+
+.calendar-legend span{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.calendar-legend i{
+  width:7px;
+  height:7px;
+  display:inline-block;
+  border-radius:50%;
+}
+
+.subject-row{
+  position:relative;
+  padding:13px 0;
+  border-bottom:1px solid #edf0f4;
+}
+
+.subject-row:last-child{
+  border-bottom:0;
+}
+
+.subject-row>div:first-child{
+  padding-right:45px;
+}
+
+.subject-row b{
+  display:block;
+  font-size:12px;
+}
+
+.subject-row small{
+  display:block;
+  margin-top:3px;
+  color:#8a95a4;
+  font-size:9px;
+}
+
+.subject-row strong{
+  position:absolute;
+  right:0;
+  top:15px;
+  font-size:12px;
+  color:#176bd0;
+}
+
+.progress{
+  height:5px;
+  margin-top:9px;
+  overflow:hidden;
+  border-radius:10px;
+  background:#edf1f6;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  border-radius:10px;
+  background:#1671d8;
+}
