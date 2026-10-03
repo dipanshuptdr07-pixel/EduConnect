@@ -171,13 +171,189 @@ function home(){
   ${bottom()}
  </div>`;
 }
+
+function page(title,text){
+ app.innerHTML=`
+ <div class="mobile-app">
+  ${header()}
+
+  <main class="mobile-content inner-page">
+
+   <button class="back" onclick="go('home')">‹ Back</button>
+
+   <div class="page-card">
+    <div class="page-icon">📚</div>
+    <h1>${title}</h1>
+    <p>${text}</p>
+   </div>
+
+  </main>
+
+  ${bottom()}
+ </div>`;
+}
+
+function attendancePage(){
+ app.innerHTML=`
+ <div class="mobile-app">
+  ${header()}
+
+  <main class="mobile-content inner-page">
+
+   <button class="back" onclick="go('home')">‹ Back</button>
+
+   <div class="page-heading">
+    <small>ACADEMICS</small>
+    <h1>Attendance</h1>
+    <p>Your attendance overview and monthly record.</p>
+   </div>
+
+   <section class="attendance-main">
+    <div class="attendance-ring">
+     <div>
+      <b>92%</b>
+      <span>Overall</span>
+     </div>
+    </div>
+
+    <div class="attendance-info">
+     <b>Great consistency!</b>
+     <p>Keep maintaining your attendance this month.</p>
+    </div>
+   </section>
+
+   <section class="attendance-stats">
+    <div>
+     <span class="dot present"></span>
+     <b>46</b>
+     <small>Present</small>
+    </div>
+
+    <div>
+     <span class="dot absent"></span>
+     <b>3</b>
+     <small>Absent</small>
+    </div>
+
+    <div>
+     <span class="dot leave"></span>
+     <b>1</b>
+     <small>Leave</small>
+    </div>
+   </section>
+
+   <div class="section-title">
+    <b>October 2026</b>
+    <span>Monthly View</span>
+   </div>
+
+   <section class="calendar-card">
+    <div class="calendar-head">
+     <span>Mon</span>
+     <span>Tue</span>
+     <span>Wed</span>
+     <span>Thu</span>
+     <span>Fri</span>
+     <span>Sat</span>
+     <span>Sun</span>
+    </div>
+
+    <div class="calendar-days">
+     <span class="muted">28</span>
+     <span class="muted">29</span>
+     <span class="muted">30</span>
+     <span>1</span>
+     <span class="present-day">2</span>
+     <span class="present-day">3</span>
+     <span class="weekend">4</span>
+
+     <span class="present-day">5</span>
+     <span class="present-day">6</span>
+     <span class="present-day">7</span>
+     <span class="present-day">8</span>
+     <span class="present-day">9</span>
+     <span class="absent-day">10</span>
+     <span class="weekend">11</span>
+
+     <span class="present-day">12</span>
+     <span class="present-day">13</span>
+     <span class="leave-day">14</span>
+     <span class="present-day">15</span>
+     <span class="present-day">16</span>
+     <span class="present-day">17</span>
+     <span class="weekend">18</span>
+
+     <span class="present-day">19</span>
+     <span class="present-day">20</span>
+     <span class="present-day">21</span>
+     <span class="present-day">22</span>
+     <span class="present-day">23</span>
+     <span class="present-day">24</span>
+     <span class="weekend">25</span>
+
+     <span class="present-day">26</span>
+     <span class="present-day">27</span>
+     <span class="present-day">28</span>
+     <span class="present-day">29</span>
+     <span class="present-day">30</span>
+     <span class="present-day">31</span>
+    </div>
+
+    <div class="calendar-legend">
+     <span><i class="present"></i> Present</span>
+     <span><i class="absent"></i> Absent</span>
+     <span><i class="leave"></i> Leave</span>
+    </div>
+   </section>
+
+   <div class="section-title">
+    <b>Subject Attendance</b>
+    <span>View all</span>
+   </div>
+
+   <section class="subject-attendance">
+
+    <div class="subject-row">
+     <div>
+      <b>Physics</b>
+      <small>18 / 20 classes</small>
+     </div>
+     <strong>90%</strong>
+     <div class="progress"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="subject-row">
+     <div>
+      <b>Chemistry</b>
+      <small>19 / 20 classes</small>
+     </div>
+     <strong>95%</strong>
+     <div class="progress"><span style="width:95%"></span></div>
+    </div>
+
+    <div class="subject-row">
+     <div>
+      <b>Mathematics</b>
+      <small>17 / 19 classes</small>
+     </div>
+     <strong>89%</strong>
+     <div class="progress"><span style="width:89%"></span></div>
+    </div>
+
+   </section>
+
+  </main>
+
+  ${bottom()}
+ </div>`;
+}
 function render(){
  if(!user)return loginScreen();
  const p=location.hash.replace("#","")||"home";
 
  if(p==="home")home();
  else if(p==="homework")page("Homework","Assignments and submissions");
- else if(p==="attendance")page("Attendance","Overall attendance and daily records");
+ else if(p==="attendance")attendancePage();
  else if(p==="results")page("Results","Marks, grades and academic performance");
  else if(p==="exams")page("Exams & Timetable","Upcoming examinations and weekly timetable");
  else if(p==="fees")page("Fees","Fee details and payment status");
