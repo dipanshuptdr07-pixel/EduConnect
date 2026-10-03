@@ -83,6 +83,7 @@ function home(){
  app.innerHTML=`
  <div class="mobile-app">
   ${header()}
+
   <main class="mobile-content">
 
    <section class="welcome">
@@ -90,57 +91,86 @@ function home(){
     <small>Saraswati Vidya Mandir Higher Secondary School</small>
    </section>
 
-   <section class="stat-grid">
-    <div class="stat-card green"><small>Attendance</small><b>92%</b><span>↑ 2% from last week</span></div>
-    <div class="stat-card purple"><small>Total Marks</small><b>438/500</b><span>↑ 12% from last exam</span></div>
-    <div class="stat-card orange"><small>Pending Homework</small><b>3</b><span>View details</span></div>
-    <div class="stat-card red"><small>Upcoming Exams</small><b>2</b><span>View schedule</span></div>
+   <section class="hero-card">
+    <div>
+     <small>Keep Going</small>
+     <b>Your Future Is Bright ✨</b>
+     <span>Stay consistent and keep learning.</span>
+    </div>
+    <div class="hero-icon">🎓</div>
    </section>
 
-   <div class="section-title"><b>Quick Actions</b><span>View all</span></div>
+   <section class="stat-grid">
+    <div class="stat-card green">
+     <small>Attendance</small>
+     <b>92%</b>
+     <span>↑ 2% from last week</span>
+    </div>
+
+    <div class="stat-card purple">
+     <small>Total Marks</small>
+     <b>438/500</b>
+     <span>↑ 12% from last exam</span>
+    </div>
+
+    <div class="stat-card orange">
+     <small>Pending Homework</small>
+     <b>3</b>
+     <span>View details</span>
+    </div>
+
+    <div class="stat-card red">
+     <small>Upcoming Exams</small>
+     <b>2</b>
+     <span>View schedule</span>
+    </div>
+   </section>
+
+   <div class="section-title">
+    <b>Quick Actions</b>
+    <span>View all</span>
+   </div>
 
    <section class="quick-grid">
     <button onclick="go('homework')">📚<span>Homework</span></button>
-    <button onclick="go('results')">📊<span>Results</span></button>
-    <button onclick="go('exams')">🗓️<span>Timetable</span></button>
-    <button onclick="go('fees')">💳<span>Fees</span></button>
     <button onclick="go('attendance')">✓<span>Attendance</span></button>
+    <button onclick="go('results')">📊<span>Results</span></button>
+    <button onclick="go('exams')">🗓️<span>Exams</span></button>
+    <button onclick="go('fees')">💳<span>Fees</span></button>
+    <button onclick="go('events')">🎉<span>Events</span></button>
     <button onclick="go('leave')">📝<span>Leave</span></button>
-    <button onclick="go('documents')">📁<span>Documents</span></button>
     <button onclick="go('study')">✨<span>Study AI</span></button>
    </section>
 
-   <div class="section-title"><b>Recent Notices</b><span>View all</span></div>
+   <div class="section-title">
+    <b>Recent Notices</b>
+    <span onclick="go('notices')">View all</span>
+   </div>
 
    <section class="notice-card">
-    ${DB.notices.map(n=>`<div>🔔 <span>${n}</span></div>`).join("")}
+    ${DB.notices.map((n,i)=>`
+     <div>
+      <b class="notice-icon">${i===0?"📢":i===1?"📅":"🎯"}</b>
+      <span>${n}</span>
+     </div>
+    `).join("")}
    </section>
 
-   <div class="section-title"><b>Upcoming Events</b><span>View all</span></div>
+   <div class="section-title">
+    <b>Upcoming Events</b>
+    <span onclick="go('events')">View all</span>
+   </div>
 
    <section class="event-card">
-    <b>Science Exhibition</b>
+    <b>🔬 Science Exhibition</b>
     <small>18 Sep 2026 · School Campus</small>
    </section>
 
   </main>
+
   ${bottom()}
  </div>`;
 }
-
-function page(title,text){
- app.innerHTML=`
- <div class="mobile-app">
-  ${header()}
-  <main class="mobile-content inner-page">
-   <button class="back" onclick="go('home')">‹ Back</button>
-   <h1>${title}</h1>
-   <p>${text}</p>
-  </main>
-  ${bottom()}
- </div>`;
-}
-
 function render(){
  if(!user)return loginScreen();
  const p=location.hash.replace("#","")||"home";
