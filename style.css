@@ -1,0 +1,129 @@
+/* EduConnect Functionality Patch — append to style.css */
+
+/* Dark mode */
+body.dark-mode{
+  --bg:#0f172a;
+  --card:#172033;
+  --text:#f3f6ff;
+  --muted:#a8b1c2;
+  --line:#2b3548;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+  background:#0f172a;
+  color:#f3f6ff;
+}
+body.dark-mode .mobile-head,
+body.dark-mode .bottom-nav,
+body.dark-mode .card,
+body.dark-mode .form-card,
+body.dark-mode .profile-card,
+body.dark-mode .date-card,
+body.dark-mode .student-attendance,
+body.dark-mode .attendance-main,
+body.dark-mode .report-card,
+body.dark-mode .event-card,
+body.dark-mode .homework-card,
+body.dark-mode .result-card,
+body.dark-mode .exam-card,
+body.dark-mode .fee-card,
+body.dark-mode .due-card{
+  background:#172033;
+  border-color:#2b3548;
+  color:#f3f6ff;
+}
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+  background:#111827;
+  color:#f3f6ff;
+  border-color:#374151;
+}
+body.dark-mode .quick-action,
+body.dark-mode .action-card,
+body.dark-mode .info-banner{
+  background:#172033;
+  border-color:#2b3548;
+}
+
+/* Attendance history */
+.attendance-history{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.attendance-history-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.attendance-history-row .list-info{flex:1}
+.attendance-select,
+.toggle-btn{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:9px 12px;
+  background:var(--card);
+  color:var(--text);
+  font-weight:700;
+}
+.attendance-summary-mini{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px 16px;
+  margin:12px 0;
+}
+.attendance-summary-mini strong{font-size:22px}
+.attendance-summary-mini span{color:var(--muted)}
+
+/* Notifications */
+.notification-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.notification-item{
+  display:flex;
+  gap:12px;
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:var(--card);
+}
+.notification-item.unread{border-left:4px solid var(--primary)}
+.notification-item.read{opacity:.72}
+.notification-icon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:#eef2ff;
+  flex:none;
+}
+.notification-item strong{display:block;margin-bottom:4px}
+.notification-item p{margin:0 0 4px;color:var(--muted);font-size:13px}
+.notification-item small{color:var(--muted);font-size:11px}
+
+/* Settings */
+.settings-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+.settings-row:last-child{border-bottom:0}
+.settings-row strong{display:block}
+.settings-row small{display:block;color:var(--muted);margin-top:4px}
+.toggle-btn.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.profile-settings-actions{display:grid;gap:10px;margin:18px 0}
+.profile-settings-actions .btn{width:100%}
+
+@media(max-width:600px){
+  .attendance-history-row{align-items:flex-start}
+  .attendance-select{width:112px}
+}
